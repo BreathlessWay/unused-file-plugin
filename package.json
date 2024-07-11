@@ -1,0 +1,26 @@
+{
+  "name": "@breathlessway/unused-file-plugin",
+  "version": "0.0.3",
+  "description": "找出 webpack/vite 构建的项目中未被使用的文件的 webpack/vite 插件",
+  "main": "dist/index.js",
+  "scripts": {
+    "ugly": "terser dist/index.js --config-file terser.json  --output dist/index.js",
+    "build": "babel index.js --out-file dist/index.js && npm run ugly",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": ["webpack", "vite"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.0",
+    "terser": "^5.28.1"
+  }
+}
